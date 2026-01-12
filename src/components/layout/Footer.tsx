@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { scrollToElement } from '../../utils/animations';
 
 const Footer = () => {
   const { t } = useTranslation();
-  const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/vinhbestever', label: 'GitHub' },

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
-import { Mail, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin } from 'lucide-react';
 import { fadeInUp, staggerContainer, staggerItem } from '../../utils/animations';
 
 const Contact = () => {

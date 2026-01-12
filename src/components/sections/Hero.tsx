@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { fadeInUp, staggerContainer, staggerItem } from '../../utils/animations';
+import { staggerContainer, staggerItem } from '../../utils/animations';
 import { scrollToElement } from '../../utils/animations';
 
 const Hero = () => {

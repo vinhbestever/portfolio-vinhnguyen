@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { projects } from '../../data/projects';
-import { fadeInUp, staggerContainer, scaleIn } from '../../utils/animations';
+import { fadeInUp, staggerContainer } from '../../utils/animations';
 
 type FilterType = 'all' | 'frontend' | 'ai' | 'system';
 

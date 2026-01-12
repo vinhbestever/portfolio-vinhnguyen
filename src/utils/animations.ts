@@ -11,7 +11,7 @@ export const fadeInUp = {
   animate: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' }
+    transition: { duration: 0.6 }
   },
 };
 
@@ -21,7 +21,7 @@ export const fadeInDown = {
   animate: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' }
+    transition: { duration: 0.6 }
   },
 };
 
@@ -31,7 +31,7 @@ export const slideInLeft = {
   animate: { 
     opacity: 1, 
     x: 0,
-    transition: { duration: 0.7, ease: 'easeOut' }
+    transition: { duration: 0.7 }
   },
 };
 
@@ -41,7 +41,7 @@ export const slideInRight = {
   animate: { 
     opacity: 1, 
     x: 0,
-    transition: { duration: 0.7, ease: 'easeOut' }
+    transition: { duration: 0.7 }
   },
 };
 
@@ -51,7 +51,7 @@ export const scaleIn = {
   animate: { 
     opacity: 1, 
     scale: 1,
-    transition: { duration: 0.5, ease: 'easeOut' }
+    transition: { duration: 0.5 }
   },
 };
 
@@ -72,7 +72,7 @@ export const staggerItem = {
   animate: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' }
+    transition: { duration: 0.5 }
   },
 };
 
@@ -82,25 +82,25 @@ export const pageTransition = {
   animate: { 
     opacity: 1, 
     x: 0,
-    transition: { duration: 0.4, ease: 'easeOut' }
+    transition: { duration: 0.4 }
   },
   exit: { 
     opacity: 0, 
     x: 20,
-    transition: { duration: 0.4, ease: 'easeIn' }
+    transition: { duration: 0.4 }
   },
 };
 
 // Hover scale animation
 export const hoverScale = {
   scale: 1.05,
-  transition: { duration: 0.3, ease: 'easeInOut' }
+  transition: { duration: 0.3 }
 };
 
 // Hover lift animation
 export const hoverLift = {
   y: -10,
-  transition: { duration: 0.3, ease: 'easeInOut' }
+  transition: { duration: 0.3 }
 };
 
 // Smooth scroll to element
@@ -110,4 +110,3 @@ export const scrollToElement = (elementId: string) => {
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
-

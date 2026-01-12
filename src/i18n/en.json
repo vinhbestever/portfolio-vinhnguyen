@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Nguyen Duc Vinh",
+    "title": "Full-stack Developer | AI Engineer",
+    "description": "Building scalable AI-powered web platforms with 3+ years of experience in ReactJS, Next.js, Python, and FastAPI. Specialized in LLM integration and workflow orchestration.",
+    "cta1": "View Projects",
+    "cta2": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passionate about creating intelligent applications",
+    "description": "Full-stack Developer with 3+ years of experience building scalable, AI-powered web platforms. Specialized in LLM integration, workflow orchestration, and MCP-based system design with a strong focus on performance, usability, and clean architecture. I create intelligent, user-centric applications that combine robust backend systems with seamless UI/UX experiences.",
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Completed",
+      "technologies": "Technologies"
+    }
+  },
+  "experience": {
+    "title": "Project Timeline",
+    "subtitle": "Key projects at Taureau.AI (2022 - 2025)",
+    "present": "Present"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Tools I use to bring ideas to life",
+    "frontend": {
+      "title": "Frontend Development",
+      "description": "Building modern and responsive user interfaces"
+    },
+    "ai": {
+      "title": "AI & LLM Development",
+      "description": "Building intelligent applications with Large Language Models"
+    },
+    "system": {
+      "title": "System & DevOps",
+      "description": "Designing and deploying scalable systems"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Projects I've built",
+    "filter": {
+      "all": "All",
+      "frontend": "Frontend",
+      "ai": "AI",
+      "system": "System"
+    },
+    "buttons": {
+      "live": "Live Demo",
+      "github": "GitHub",
+      "details": "Details"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's connect and create something amazing together",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "social": "Social Media"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "built": "Built with",
+    "and": "and"
+  }
+}

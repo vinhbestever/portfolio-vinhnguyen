@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Về tôi",
+    "experience": "Kinh nghiệm",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "name": "Nguyễn Đức Vinh",
+    "title": "Full-stack Developer | AI Engineer",
+    "description": "Xây dựng nền tảng web AI có khả năng mở rộng với 3+ năm kinh nghiệm về ReactJS, Next.js, Python và FastAPI. Chuyên về tích hợp LLM và điều phối workflow.",
+    "cta1": "Xem Dự Án",
+    "cta2": "Liên Hệ Tôi"
+  },
+  "about": {
+    "title": "Về Tôi",
+    "subtitle": "Đam mê tạo ra ứng dụng thông minh",
+    "description": "Full-stack Developer với 3+ năm kinh nghiệm xây dựng nền tảng web AI có khả năng mở rộng. Chuyên về tích hợp LLM, điều phối workflow và thiết kế hệ thống MCP với trọng tâm vào hiệu suất, khả năng sử dụng và kiến trúc sạch. Tôi tạo ra các ứng dụng thông minh, lấy người dùng làm trung tâm, kết hợp hệ thống backend mạnh mẽ với trải nghiệm UI/UX liền mạch.",
+    "stats": {
+      "experience": "Năm kinh nghiệm",
+      "projects": "Dự án hoàn thành",
+      "technologies": "Công nghệ"
+    }
+  },
+  "experience": {
+    "title": "Timeline Dự Án",
+    "subtitle": "Các dự án chính tại Taureau.AI (2022 - 2025)",
+    "present": "Hiện tại"
+  },
+  "skills": {
+    "title": "Kỹ Năng & Công Nghệ",
+    "subtitle": "Công cụ tôi sử dụng để biến ý tưởng thành hiện thực",
+    "frontend": {
+      "title": "Frontend Development",
+      "description": "Xây dựng giao diện người dùng hiện đại và responsive"
+    },
+    "ai": {
+      "title": "AI & Phát triển LLM",
+      "description": "Xây dựng ứng dụng thông minh với Large Language Models"
+    },
+    "system": {
+      "title": "System & DevOps",
+      "description": "Thiết kế và triển khai hệ thống có khả năng mở rộng"
+    }
+  },
+  "projects": {
+    "title": "Dự Án Nổi Bật",
+    "subtitle": "Những dự án tôi đã xây dựng",
+    "filter": {
+      "all": "Tất cả",
+      "frontend": "Frontend",
+      "ai": "AI",
+      "system": "System"
+    },
+    "buttons": {
+      "live": "Xem Demo",
+      "github": "GitHub",
+      "details": "Chi tiết"
+    }
+  },
+  "contact": {
+    "title": "Liên Hệ",
+    "subtitle": "Hãy kết nối và cùng nhau tạo ra điều gì đó tuyệt vời",
+    "email": "Email",
+    "phone": "Điện thoại",
+    "location": "Vị trí",
+    "social": "Mạng xã hội"
+  },
+  "footer": {
+    "rights": "Bản quyền thuộc về",
+    "built": "Được xây dựng với",
+    "and": "và"
+  }
+}

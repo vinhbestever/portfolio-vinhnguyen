@@ -3,7 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 import { Code, Brain, Server } from 'lucide-react';
 import { skillCategories } from '../../data/skills';
-import { fadeInUp, staggerContainer, staggerItem } from '../../utils/animations';
+import {
+  fadeInUp,
+  staggerContainer,
+  staggerItem,
+} from '../../utils/animations';
 
 const Skills = () => {
   const { t, i18n } = useTranslation();
@@ -42,9 +46,14 @@ const Skills = () => {
           className="grid md:grid-cols-3 gap-8"
         >
           {skillCategories.map((category, categoryIndex) => {
-            const Icon = categoryIcons[category.id as keyof typeof categoryIcons];
-            const title = i18n.language === 'vi' ? category.titleVi : category.title;
-            const description = i18n.language === 'vi' ? category.descriptionVi : category.description;
+            const Icon =
+              categoryIcons[category.id as keyof typeof categoryIcons];
+            const title =
+              i18n.language === 'vi' ? category.titleVi : category.title;
+            const description =
+              i18n.language === 'vi'
+                ? category.descriptionVi
+                : category.description;
 
             return (
               <motion.div
@@ -56,8 +65,16 @@ const Skills = () => {
                 {/* Icon */}
                 <motion.div
                   initial={{ scale: 0, rotate: -180 }}
-                  animate={inView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
-                  transition={{ delay: 0.2 * categoryIndex, type: 'spring', stiffness: 200 }}
+                  animate={
+                    inView
+                      ? { scale: 1, rotate: 0 }
+                      : { scale: 0, rotate: -180 }
+                  }
+                  transition={{
+                    delay: 0.2 * categoryIndex,
+                    type: 'spring',
+                    stiffness: 200,
+                  }}
                   className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-600 to-secondary-600 flex items-center justify-center mb-6"
                 >
                   <Icon className="w-8 h-8 text-white" />
@@ -75,8 +92,12 @@ const Skills = () => {
                     <motion.div
                       key={skill.name}
                       initial={{ opacity: 0, x: -20 }}
-                      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                      transition={{ delay: 0.1 * categoryIndex + 0.05 * skillIndex }}
+                      animate={
+                        inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                      }
+                      transition={{
+                        delay: 0.1 * categoryIndex + 0.05 * skillIndex,
+                      }}
                     >
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-medium text-gray-300">
@@ -86,12 +107,14 @@ const Skills = () => {
                           {skill.level}%
                         </span>
                       </div>
-                      
+
                       {/* Progress Bar */}
                       <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
-                          animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
+                          animate={
+                            inView ? { width: `${skill.level}%` } : { width: 0 }
+                          }
                           transition={{
                             delay: 0.1 * categoryIndex + 0.05 * skillIndex,
                             duration: 1,
@@ -111,12 +134,29 @@ const Skills = () => {
         {/* Floating Tech Icons */}
         <div className="relative mt-20 h-32 overflow-hidden">
           <div className="flex gap-8 animate-marquee">
-            {['React', 'TypeScript', 'Python', 'Docker', 'AWS', 'TensorFlow', 'Kubernetes', 'Node.js', 
-              'Vue', 'Next.js', 'PyTorch', 'Linux', 'Redux', 'FastAPI', 'Terraform', 'Git'].map((tech, index) => (
+            {[
+              'React',
+              'TypeScript',
+              'Python',
+              'Docker',
+              'TensorFlow',
+              'Kubernetes',
+              'Node.js',
+              'Vue',
+              'Next.js',
+              'PyTorch',
+              'Linux',
+              'Redux',
+              'FastAPI',
+              'Terraform',
+              'Git',
+            ].map((tech, index) => (
               <motion.div
                 key={tech}
                 initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 0.5, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  inView ? { opacity: 0.5, y: 0 } : { opacity: 0, y: 20 }
+                }
                 transition={{ delay: 0.05 * index }}
                 whileHover={{ opacity: 1, scale: 1.1 }}
                 className="flex-shrink-0 px-6 py-3 rounded-full glass text-sm font-medium cursor-default"
@@ -132,4 +172,3 @@ const Skills = () => {
 };
 
 export default Skills;
-

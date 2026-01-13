@@ -28,16 +28,6 @@ const Footer = () => {
     <footer className="relative z-10 bg-gray-950/50 backdrop-blur-sm border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <h3 className="text-2xl font-bold gradient-text mb-4">
-              VinhNguyen
-            </h3>
-            <p className="text-gray-400 mb-4">
-              Full-stack Developer | AI Engineer
-            </p>
-          </div>
-
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>

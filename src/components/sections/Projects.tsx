@@ -7,30 +7,45 @@ import { useNavigate } from 'react-router-dom';
 import { projects } from '../../data/projects';
 import { fadeInUp, staggerContainer } from '../../utils/animations';
 
-type FilterType = 'all' | 'frontend' | 'ai' | 'system';
+const ProjectImageFallback = ({ category }: { category: string }) => (
+  <div className="w-full h-full flex items-center justify-center text-6xl font-bold text-white/10">
+    {category === 'enterprise' && '🏢'}
+    {category === 'personal' && '💡'}
+  </div>
+);
+
+type FilterType = 'all' | 'enterprise' | 'personal';
 
 const Projects = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
 
+  const handleImageError = (projectId: string) => {
+    setImageErrors((prev) => new Set(prev).add(projectId));
+  };
+
   const filters: { id: FilterType; label: string }[] = [
     { id: 'all', label: t('projects.filter.all') },
-    { id: 'frontend', label: t('projects.filter.frontend') },
-    { id: 'ai', label: t('projects.filter.ai') },
-    { id: 'system', label: t('projects.filter.system') },
+    { id: 'enterprise', label: t('projects.filter.enterprise') },
+    { id: 'personal', label: t('projects.filter.personal') },
   ];
 
-  const filteredProjects = activeFilter === 'all'
-    ? projects
-    : projects.filter(project => project.category === activeFilter);
+  const filteredProjects =
+    activeFilter === 'all'
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <section id="projects" className="section-padding relative z-10 bg-gray-950/30">
+    <section
+      id="projects"
+      className="section-padding relative z-10 bg-gray-950/30"
+    >
       <div className="max-w-7xl mx-auto" ref={ref}>
         {/* Section Title */}
         <motion.div
@@ -78,8 +93,12 @@ const Projects = () => {
         >
           <AnimatePresence mode="wait">
             {filteredProjects.map((project, index) => {
-              const title = i18n.language === 'vi' ? project.titleVi : project.title;
-              const description = i18n.language === 'vi' ? project.descriptionVi : project.description;
+              const title =
+                i18n.language === 'vi' ? project.titleVi : project.title;
+              const description =
+                i18n.language === 'vi'
+                  ? project.descriptionVi
+                  : project.description;
 
               return (
                 <motion.div
@@ -95,16 +114,24 @@ const Projects = () => {
                 >
                   {/* Project Image */}
                   <div className="relative h-48 bg-gradient-to-br from-primary-600/20 to-secondary-600/20 overflow-hidden">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.4 }}
-                      className="w-full h-full flex items-center justify-center text-6xl font-bold text-white/10"
-                    >
-                      {project.category === 'frontend' && '⚛️'}
-                      {project.category === 'ai' && '🤖'}
-                      {project.category === 'system' && '⚙️'}
-                    </motion.div>
-                    
+                    {imageErrors.has(project.id) ? (
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        <ProjectImageFallback category={project.category} />
+                      </motion.div>
+                    ) : (
+                      <motion.img
+                        src={project.image}
+                        alt={title}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.4 }}
+                        className="w-full h-full object-cover"
+                        onError={() => handleImageError(project.id)}
+                      />
+                    )}
+
                     {/* Featured Badge */}
                     {project.featured && (
                       <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-accent-500 text-white text-xs font-semibold">
@@ -197,4 +224,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

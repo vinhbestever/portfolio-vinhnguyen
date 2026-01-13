@@ -10,7 +10,7 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Nguyen Duc Vinh",
-    "title": "Full-stack Developer | AI Engineer",
+    "title": "Full-stack Developer | Designer | AI Engineer",
     "description": "Building scalable AI-powered web platforms with 3+ years of experience in ReactJS, Next.js, Python, and FastAPI. Specialized in LLM integration and workflow orchestration.",
     "cta1": "View Projects",
     "cta2": "Contact Me"
@@ -18,7 +18,7 @@
   "about": {
     "title": "About Me",
     "subtitle": "Passionate about creating intelligent applications",
-    "description": "Full-stack Developer with 3+ years of experience building scalable, AI-powered web platforms. Specialized in LLM integration, workflow orchestration, and MCP-based system design with a strong focus on performance, usability, and clean architecture. I create intelligent, user-centric applications that combine robust backend systems with seamless UI/UX experiences.",
+    "description": "With over 3 years as a software engineer, I've learned that the best products start from real user needs, not from technology constraints. Throughout my journey, I've always believed in putting users at the center—building solutions that truly matter in their daily lives. I don't want technology to be a barrier; instead, I want it to seamlessly enable better experiences. That's why I approach every project from need to implementation, ensuring we deliver genuine value. To achieve this holistic view, I've chosen not to limit myself to a single role. I continuously develop my skills across the entire software development lifecycle—from UI/UX design to frontend and backend—always striving to excel in every aspect so I can build products that truly make a difference.",
     "stats": {
       "experience": "Years Experience",
       "projects": "Projects Completed",
@@ -51,9 +51,8 @@
     "subtitle": "Projects I've built",
     "filter": {
       "all": "All",
-      "frontend": "Frontend",
-      "ai": "AI",
-      "system": "System"
+      "enterprise": "Enterprise",
+      "personal": "Personal"
     },
     "buttons": {
       "live": "Live Demo",

@@ -10,7 +10,7 @@
   "hero": {
     "greeting": "Xin chào, tôi là",
     "name": "Nguyễn Đức Vinh",
-    "title": "Full-stack Developer | AI Engineer",
+    "title": "Full-stack Developer | Designer | AI Engineer",
     "description": "Xây dựng nền tảng web AI có khả năng mở rộng với 3+ năm kinh nghiệm về ReactJS, Next.js, Python và FastAPI. Chuyên về tích hợp LLM và điều phối workflow.",
     "cta1": "Xem Dự Án",
     "cta2": "Liên Hệ Tôi"
@@ -18,7 +18,7 @@
   "about": {
     "title": "Về Tôi",
     "subtitle": "Đam mê tạo ra ứng dụng thông minh",
-    "description": "Full-stack Developer với 3+ năm kinh nghiệm xây dựng nền tảng web AI có khả năng mở rộng. Chuyên về tích hợp LLM, điều phối workflow và thiết kế hệ thống MCP với trọng tâm vào hiệu suất, khả năng sử dụng và kiến trúc sạch. Tôi tạo ra các ứng dụng thông minh, lấy người dùng làm trung tâm, kết hợp hệ thống backend mạnh mẽ với trải nghiệm UI/UX liền mạch.",
+    "description": "Với hơn 3 năm kinh nghiệm trong lĩnh vực software engineer, trong quá trình làm việc và phát triển sản phẩm, tôi luôn hướng đến việc xây dựng những giải pháp ứng dụng thực tế—những sản phẩm thực sự đáp ứng nhu cầu trong cuộc sống hàng ngày của người dùng. Tôi tin rằng người dùng phải luôn là trung tâm, và công nghệ không nên trở thành rào cản mà phải là công cụ tạo nên trải nghiệm tốt hơn. Vì vậy, tôi luôn tiếp cận mọi dự án từ nhu cầu đến triển khai, đảm bảo mang lại giá trị thực sự. Để có cái nhìn tổng quan về hệ thống, tôi không muốn bó hẹp bản thân trong một vị trí nhất định. Tôi không ngừng trau dồi kỹ năng xuyên suốt quy trình phát triển phần mềm—từ thiết kế UI/UX đến frontend và backend—luôn cố gắng làm tốt trong mọi khía cạnh để tạo ra những sản phẩm thực sự tạo nên sự khác biệt.",
     "stats": {
       "experience": "Năm kinh nghiệm",
       "projects": "Dự án hoàn thành",
@@ -51,9 +51,8 @@
     "subtitle": "Những dự án tôi đã xây dựng",
     "filter": {
       "all": "Tất cả",
-      "frontend": "Frontend",
-      "ai": "AI",
-      "system": "System"
+      "enterprise": "Doanh nghiệp",
+      "personal": "Cá nhân"
     },
     "buttons": {
       "live": "Xem Demo",

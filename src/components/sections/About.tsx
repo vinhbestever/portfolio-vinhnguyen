@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 import { fadeInUp, slideInLeft, slideInRight } from '../../utils/animations';
@@ -19,14 +19,34 @@ const About = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
+  // Image carousel
+  const images = [
+    '/assets/me/IMG_4953.jpg',
+    '/assets/me/IMG_1270.jpg',
+    '/assets/me/IMG_7381.JPG',
+  ];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   const stats = [
     { label: t('about.stats.experience'), value: '3+' },
-    { label: t('about.stats.projects'), value: '20+' },
+    { label: t('about.stats.projects'), value: '15+' },
     { label: t('about.stats.technologies'), value: '25+' },
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="section-padding relative z-10">
+    <section
+      id="about"
+      ref={sectionRef}
+      className="section-padding relative z-10"
+    >
       <div className="max-w-7xl mx-auto" ref={ref}>
         {/* Section Title */}
         <motion.div
@@ -51,14 +71,43 @@ const About = () => {
             className="relative"
           >
             <div className="relative w-full aspect-square max-w-md mx-auto">
-              {/* Placeholder for avatar/photo */}
+              {/* Background gradient layer */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-3xl transform rotate-6" />
+
+              {/* Image carousel */}
               <div className="absolute inset-0 glass rounded-3xl overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-8xl font-bold gradient-text">
-                  VN
-                </div>
+                {images.map((image, index) => (
+                  <motion.img
+                    key={image}
+                    src={image}
+                    alt={`Vinh Nguyen ${index + 1}`}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: currentImageIndex === index ? 1 : 0,
+                      scale: currentImageIndex === index ? 1 : 1.1,
+                    }}
+                    transition={{ duration: 0.7 }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ))}
               </div>
-              
+
+              {/* Image navigation dots */}
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      currentImageIndex === index
+                        ? 'bg-primary-500 w-8'
+                        : 'bg-gray-600 hover:bg-gray-500'
+                    }`}
+                    aria-label={`View image ${index + 1}`}
+                  />
+                ))}
+              </div>
+
               {/* Decorative Elements */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -90,7 +139,11 @@ const About = () => {
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  animate={
+                    inView
+                      ? { opacity: 1, scale: 1 }
+                      : { opacity: 0, scale: 0.8 }
+                  }
                   transition={{ delay: 0.2 * index, duration: 0.5 }}
                   className="text-center p-6 card"
                 >
@@ -104,11 +157,35 @@ const About = () => {
 
             {/* Skills Preview */}
             <div className="flex flex-wrap gap-3 pt-4">
-              {['React', 'TypeScript', 'LangChain', 'Prompt Engineering', 'Docker', 'AWS'].map((skill, index) => (
+              {[
+                'Figma',
+                'Adobe',
+                'React',
+                'TypeScript',
+                'LangChain',
+                'Prompt Engineering',
+                'Docker',
+                'FastAPI',
+                'Git',
+                'Redux',
+                'Node.js',
+                'Next.js',
+                'Python',
+                'MongoDB',
+                'PostgreSQL',
+                'MySQL',
+                'Redis',
+                'Elasticsearch',
+                'Kafka',
+                'RabbitMQ',
+                'Docker',
+              ].map((skill, index) => (
                 <motion.span
                   key={skill}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  animate={
+                    inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                  }
                   transition={{ delay: 0.1 * index, duration: 0.4 }}
                   className="px-4 py-2 rounded-full bg-gradient-to-r from-primary-600/20 to-secondary-600/20 border border-primary-500/30 text-sm font-medium hover:scale-110 transition-transform cursor-default"
                 >
@@ -124,4 +201,3 @@ const About = () => {
 };
 
 export default About;
-

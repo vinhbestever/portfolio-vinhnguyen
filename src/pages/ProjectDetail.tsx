@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
@@ -10,6 +10,7 @@ const ProjectDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { i18n } = useTranslation();
+  const [imageError, setImageError] = useState(false);
 
   const project = projects.find((p) => p.id === id);
 
@@ -106,12 +107,58 @@ const ProjectDetail = () => {
           variants={fadeInUp}
           className="relative h-96 rounded-2xl overflow-hidden mb-12 bg-gradient-to-br from-primary-600/20 to-secondary-600/20"
         >
-          <div className="w-full h-full flex items-center justify-center text-9xl">
-            {project.category === 'frontend' && '⚛️'}
-            {project.category === 'ai' && '🤖'}
-            {project.category === 'system' && '⚙️'}
-          </div>
+          {imageError ? (
+            <div className="w-full h-full flex items-center justify-center text-9xl">
+              {project.category === 'enterprise' && '🏢'}
+              {project.category === 'personal' && '💡'}
+            </div>
+          ) : (
+            <img
+              src={project.image}
+              alt={title}
+              className="w-full h-full object-cover"
+              onError={() => setImageError(true)}
+            />
+          )}
         </motion.div>
+
+        {/* Demo Video (YouTube/External) */}
+        {project.videoUrl && (
+          <motion.div
+            variants={fadeInUp}
+            className="relative rounded-2xl overflow-hidden mb-12 bg-gradient-to-br from-primary-600/20 to-secondary-600/20 p-4"
+          >
+            <h2 className="text-2xl font-bold mb-4">Product Demo</h2>
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={project.videoUrl}
+                title={`${title} - Demo Video`}
+                className="absolute top-0 left-0 w-full h-full rounded-lg"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </motion.div>
+        )}
+
+        {/* Local Demo Video */}
+        {project.localVideoUrl && (
+          <motion.div
+            variants={fadeInUp}
+            className="relative rounded-2xl overflow-hidden mb-12 bg-gradient-to-br from-primary-600/20 to-secondary-600/20 p-4"
+          >
+            <h2 className="text-2xl font-bold mb-4">Product Demo</h2>
+            <video
+              controls
+              className="w-full rounded-lg"
+              preload="metadata"
+            >
+              <source src={project.localVideoUrl} type="video/mp4" />
+              <source src={project.localVideoUrl} type="video/quicktime" />
+              Your browser does not support the video tag.
+            </video>
+          </motion.div>
+        )}
 
         {/* Project Details */}
         <motion.div variants={fadeInUp} className="space-y-8">
@@ -135,29 +182,6 @@ const ProjectDetail = () => {
                 </motion.span>
               ))}
             </div>
-          </div>
-
-          {/* Features */}
-          <div className="card p-8">
-            <h2 className="text-2xl font-bold mb-4">Key Features</h2>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <span className="text-primary-400 mr-2">▹</span>
-                <span className="text-gray-300">Modern and responsive design</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-400 mr-2">▹</span>
-                <span className="text-gray-300">Optimized performance</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-400 mr-2">▹</span>
-                <span className="text-gray-300">Clean and maintainable code</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-400 mr-2">▹</span>
-                <span className="text-gray-300">Best practices and patterns</span>
-              </li>
-            </ul>
           </div>
         </motion.div>
 

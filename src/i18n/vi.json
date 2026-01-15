@@ -2,7 +2,6 @@
   "nav": {
     "home": "Trang chủ",
     "about": "Về tôi",
-    "experience": "Kinh nghiệm",
     "skills": "Kỹ năng",
     "projects": "Dự án",
     "contact": "Liên hệ"
@@ -24,11 +23,6 @@
       "projects": "Dự án hoàn thành",
       "technologies": "Công nghệ"
     }
-  },
-  "experience": {
-    "title": "Timeline Dự Án",
-    "subtitle": "Các dự án chính tại Taureau.AI (2022 - 2025)",
-    "present": "Hiện tại"
   },
   "skills": {
     "title": "Kỹ Năng & Công Nghệ",

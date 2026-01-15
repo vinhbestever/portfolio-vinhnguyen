@@ -2,7 +2,6 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "experience": "Experience",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact"
@@ -24,11 +23,6 @@
       "projects": "Projects Completed",
       "technologies": "Technologies"
     }
-  },
-  "experience": {
-    "title": "Project Timeline",
-    "subtitle": "Key projects at Taureau.AI (2022 - 2025)",
-    "present": "Present"
   },
   "skills": {
     "title": "Skills & Technologies",

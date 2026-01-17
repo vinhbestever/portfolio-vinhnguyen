@@ -165,7 +165,10 @@ const ProjectDetail = () => {
           {/* Description */}
           <div className="card p-8">
             <h2 className="text-2xl font-bold mb-4">About the Project</h2>
-            <p className="text-gray-300 leading-relaxed">{longDescription}</p>
+            <div 
+              className="text-gray-300 leading-relaxed prose prose-invert prose-lg max-w-none"
+              dangerouslySetInnerHTML={{ __html: longDescription }}
+            />
           </div>
 
           {/* Technologies */}

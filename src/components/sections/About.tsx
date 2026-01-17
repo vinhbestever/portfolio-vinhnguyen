@@ -154,45 +154,6 @@ const About = () => {
                 </motion.div>
               ))}
             </div>
-
-            {/* Skills Preview */}
-            <div className="flex flex-wrap gap-3 pt-4">
-              {[
-                'Figma',
-                'Adobe',
-                'React',
-                'TypeScript',
-                'LangChain',
-                'Prompt Engineering',
-                'Docker',
-                'FastAPI',
-                'Git',
-                'Redux',
-                'Node.js',
-                'Next.js',
-                'Python',
-                'MongoDB',
-                'PostgreSQL',
-                'MySQL',
-                'Redis',
-                'Elasticsearch',
-                'Kafka',
-                'RabbitMQ',
-                'Docker',
-              ].map((skill, index) => (
-                <motion.span
-                  key={skill}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={
-                    inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                  }
-                  transition={{ delay: 0.1 * index, duration: 0.4 }}
-                  className="px-4 py-2 rounded-full bg-gradient-to-r from-primary-600/20 to-secondary-600/20 border border-primary-500/30 text-sm font-medium hover:scale-110 transition-transform cursor-default"
-                >
-                  {skill}
-                </motion.span>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

@@ -46,6 +46,27 @@
   .card {
     @apply glass rounded-2xl p-6 hover:bg-opacity-10 transition-all duration-300 hover:shadow-glow;
   }
+
+  /* Project detail content styling */
+  .prose ul {
+    @apply list-disc list-outside ml-6 space-y-3 my-4;
+  }
+
+  .prose ul li {
+    @apply text-gray-300 leading-relaxed pl-2;
+  }
+
+  .prose p {
+    @apply text-gray-300 leading-relaxed mb-4;
+  }
+
+  .prose p:last-child {
+    @apply mb-0;
+  }
+
+  .prose strong {
+    @apply text-white font-semibold;
+  }
 }
 
 @layer utilities {

@@ -105,7 +105,7 @@ const ProjectDetail = () => {
         {/* Project Image */}
         <motion.div
           variants={fadeInUp}
-          className="relative h-96 rounded-2xl overflow-hidden mb-12 bg-gradient-to-br from-primary-600/20 to-secondary-600/20"
+          className="relative h-120 rounded-2xl overflow-hidden mb-12 bg-gradient-to-br from-primary-600/20 to-secondary-600/20"
         >
           {imageError ? (
             <div className="w-full h-full flex items-center justify-center text-9xl">

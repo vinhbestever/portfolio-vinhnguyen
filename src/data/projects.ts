@@ -525,4 +525,97 @@ export const projects: Project[] = [
     category: 'personal',
     featured: false,
   },
+  {
+    id: '8',
+    title: 'Digital Signature System',
+    titleVi: 'Hệ thống Chữ ký Số',
+    description:
+      'Full-stack digital signature platform with secure document signing and verification capabilities',
+    descriptionVi:
+      'Nền tảng chữ ký số full-stack với khả năng ký và xác thực tài liệu an toàn',
+    longDescription:
+      '<p>A comprehensive digital signature system that implements industry-standard cryptographic algorithms for secure document signing and verification. This platform demonstrates practical application of asymmetric encryption techniques in real-world document management scenarios.</p>' +
+      '<p><strong>Cryptographic Implementation:</strong></p>' +
+      '<ul>' +
+      '<li><strong>RSA (Rivest-Shamir-Adleman) Algorithm:</strong> Implemented RSA-2048 and RSA-4096 for robust digital signatures. RSA provides strong security through the mathematical difficulty of factoring large prime numbers. Users can generate RSA key pairs and sign documents with their private keys, while recipients verify signatures using corresponding public keys.</li>' +
+      '<li><strong>ECC (Elliptic Curve Cryptography) Algorithm:</strong> Integrated ECC with support for curves like P-256 and P-384, offering equivalent security to RSA with significantly smaller key sizes. ECC signatures are faster to generate and verify, making them ideal for high-performance scenarios while maintaining strong cryptographic guarantees.</li>' +
+      '<li><strong>Hybrid Approach:</strong> Users can choose between RSA and ECC based on their security requirements and performance needs. The system supports both algorithms seamlessly, allowing comparison of signature generation time, verification speed, and signature size.</li>' +
+      '<li><strong>Hash Functions:</strong> Implemented SHA-256 and SHA-512 for document hashing before signing, ensuring data integrity. The signing process hashes the document first, then encrypts the hash with the private key, following industry best practices.</li>' +
+      '</ul>' +
+      '<p><strong>Technical Architecture:</strong></p>' +
+      '<ul>' +
+      '<li><strong>Frontend:</strong> Built with React and TypeScript providing an intuitive interface for key generation, document signing, and signature verification. Real-time feedback on cryptographic operations with visual indicators of signature validity.</li>' +
+      '<li><strong>Backend:</strong> Developed using Node.js with crypto libraries implementing RSA and ECC algorithms. RESTful APIs handle secure key management, signature generation, and verification logic with proper error handling for cryptographic failures.</li>' +
+      '<li><strong>Key Management:</strong> Secure storage of private keys with encryption at rest. Public keys are stored alongside document signatures for verification. Implemented proper key lifecycle management including generation, storage, and revocation.</li>' +
+      '<li><strong>Database:</strong> PostgreSQL stores user credentials, document metadata, digital signatures, and public keys with indexes optimized for signature verification queries.</li>' +
+      '<li><strong>Containerization:</strong> Docker setup ensures consistent cryptographic library versions across environments, critical for reproducible signature generation and verification.</li>' +
+      '</ul>' +
+      '<p><strong>Key Features & Workflow:</strong></p>' +
+      '<ul>' +
+      '<li><strong>Algorithm Selection:</strong> Choose between RSA (2048/4096-bit) or ECC (P-256/P-384) based on security and performance requirements</li>' +
+      '<li><strong>Key Pair Generation:</strong> Generate cryptographic key pairs with visual feedback. Private keys are encrypted and securely stored, while public keys are available for sharing.</li>' +
+      '<li><strong>Document Signing:</strong> Upload documents (PDF, DOCX, TXT), select signing algorithm, and generate digital signatures. The system computes document hash using SHA-256/512, then signs with the selected algorithm.</li>' +
+      '<li><strong>Signature Verification:</strong> Verify document authenticity by checking signatures against public keys. The system validates that documents have not been modified since signing and confirms signer identity.</li>' +
+      '<li><strong>Performance Comparison:</strong> Built-in tools to compare RSA vs ECC in terms of signature generation time, verification speed, and signature size, demonstrating practical trade-offs between algorithms.</li>' +
+      '<li><strong>Audit Logging:</strong> Complete history of signing and verification activities with timestamps, algorithm used, and operation results for compliance and security analysis.</li>' +
+      '</ul>' +
+      '<p><strong>Security & Best Practices:</strong></p>' +
+      '<ul>' +
+      '<li><strong>Non-repudiation:</strong> Digital signatures provide mathematical proof that documents were signed by specific private keys, preventing signers from denying their actions</li>' +
+      '<li><strong>Integrity Protection:</strong> Any modification to signed documents invalidates signatures, detected immediately during verification</li>' +
+      '<li><strong>Authentication:</strong> Signatures confirm document origin through cryptographic verification of signer identity</li>' +
+      '<li><strong>Industry Standards:</strong> Follows PKCS#1 standards for RSA and SEC standards for ECC, ensuring compatibility and security</li>' +
+      '</ul>' +
+      '<p>This project showcases deep understanding of public-key cryptography, secure software development practices, and the practical challenges of implementing cryptographic systems. The ability to implement and compare multiple algorithms demonstrates comprehensive knowledge of modern digital signature technologies.</p>',
+    longDescriptionVi:
+      '<p>Một hệ thống chữ ký số toàn diện triển khai các thuật toán mã hóa chuẩn công nghiệp để ký và xác thực tài liệu an toàn. Nền tảng này thể hiện ứng dụng thực tế của các kỹ thuật mã hóa bất đối xứng trong các tình huống quản lý tài liệu thực tế.</p>' +
+      '<p><strong>Triển khai Mật mã học:</strong></p>' +
+      '<ul>' +
+      '<li><strong>Thuật toán RSA (Rivest-Shamir-Adleman):</strong> Triển khai RSA-2048 và RSA-4096 cho chữ ký số mạnh mẽ. RSA cung cấp bảo mật cao thông qua độ khó toán học của việc phân tích thừa số các số nguyên tố lớn. Người dùng có thể tạo cặp khóa RSA và ký tài liệu bằng khóa riêng, trong khi người nhận xác minh chữ ký bằng khóa công khai tương ứng.</li>' +
+      '<li><strong>Thuật toán ECC (Elliptic Curve Cryptography):</strong> Tích hợp ECC với hỗ trợ các đường cong như P-256 và P-384, cung cấp bảo mật tương đương RSA với kích thước khóa nhỏ hơn đáng kể. Chữ ký ECC nhanh hơn để tạo và xác minh, làm cho chúng lý tưởng cho các tình huống hiệu suất cao trong khi vẫn duy trì đảm bảo mật mã mạnh mẽ.</li>' +
+      '<li><strong>Phương pháp Kết hợp:</strong> Người dùng có thể chọn giữa RSA và ECC dựa trên yêu cầu bảo mật và nhu cầu hiệu suất. Hệ thống hỗ trợ cả hai thuật toán một cách liền mạch, cho phép so sánh thời gian tạo chữ ký, tốc độ xác minh và kích thước chữ ký.</li>' +
+      '<li><strong>Hàm Hash:</strong> Triển khai SHA-256 và SHA-512 để hash tài liệu trước khi ký, đảm bảo tính toàn vẹn dữ liệu. Quá trình ký hash tài liệu trước, sau đó mã hóa hash bằng khóa riêng, tuân theo các thực hành tốt nhất của ngành.</li>' +
+      '</ul>' +
+      '<p><strong>Kiến trúc Kỹ thuật:</strong></p>' +
+      '<ul>' +
+      '<li><strong>Frontend:</strong> Xây dựng với React và TypeScript cung cấp giao diện trực quan cho việc tạo khóa, ký tài liệu và xác minh chữ ký. Phản hồi real-time về các hoạt động mật mã với chỉ báo trực quan về tính hợp lệ của chữ ký.</li>' +
+      '<li><strong>Backend:</strong> Phát triển bằng Node.js với các thư viện crypto triển khai thuật toán RSA và ECC. RESTful APIs xử lý quản lý khóa an toàn, tạo chữ ký và logic xác minh với xử lý lỗi phù hợp cho các lỗi mật mã.</li>' +
+      '<li><strong>Quản lý Khóa:</strong> Lưu trữ an toàn khóa riêng với mã hóa khi lưu trữ. Khóa công khai được lưu trữ cùng với chữ ký tài liệu để xác minh. Triển khai quản lý vòng đời khóa đúng cách bao gồm tạo, lưu trữ và thu hồi.</li>' +
+      '<li><strong>Database:</strong> PostgreSQL lưu trữ thông tin đăng nhập người dùng, metadata tài liệu, chữ ký số và khóa công khai với các chỉ mục được tối ưu hóa cho truy vấn xác minh chữ ký.</li>' +
+      '<li><strong>Containerization:</strong> Thiết lập Docker đảm bảo phiên bản thư viện mật mã nhất quán trên các môi trường, quan trọng cho việc tạo và xác minh chữ ký có thể tái tạo.</li>' +
+      '</ul>' +
+      '<p><strong>Tính năng Chính & Quy trình:</strong></p>' +
+      '<ul>' +
+      '<li><strong>Chọn Thuật toán:</strong> Chọn giữa RSA (2048/4096-bit) hoặc ECC (P-256/P-384) dựa trên yêu cầu bảo mật và hiệu suất</li>' +
+      '<li><strong>Tạo Cặp Khóa:</strong> Tạo cặp khóa mật mã với phản hồi trực quan. Khóa riêng được mã hóa và lưu trữ an toàn, trong khi khóa công khai có sẵn để chia sẻ.</li>' +
+      '<li><strong>Ký Tài liệu:</strong> Upload tài liệu (PDF, DOCX, TXT), chọn thuật toán ký và tạo chữ ký số. Hệ thống tính hash tài liệu bằng SHA-256/512, sau đó ký bằng thuật toán đã chọn.</li>' +
+      '<li><strong>Xác minh Chữ ký:</strong> Xác minh tính xác thực tài liệu bằng cách kiểm tra chữ ký với khóa công khai. Hệ thống xác thực tài liệu không bị sửa đổi kể từ khi ký và xác nhận danh tính người ký.</li>' +
+      '<li><strong>So sánh Hiệu suất:</strong> Công cụ tích hợp để so sánh RSA vs ECC về thời gian tạo chữ ký, tốc độ xác minh và kích thước chữ ký, thể hiện sự đánh đổi thực tế giữa các thuật toán.</li>' +
+      '<li><strong>Nhật ký Kiểm toán:</strong> Lịch sử đầy đủ các hoạt động ký và xác minh với dấu thời gian, thuật toán được sử dụng và kết quả hoạt động để tuân thủ và phân tích bảo mật.</li>' +
+      '</ul>' +
+      '<p><strong>Bảo mật & Thực hành Tốt nhất:</strong></p>' +
+      '<ul>' +
+      '<li><strong>Không thể chối bỏ:</strong> Chữ ký số cung cấp bằng chứng toán học rằng tài liệu được ký bởi khóa riêng cụ thể, ngăn người ký từ chối hành động của họ</li>' +
+      '<li><strong>Bảo vệ Tính toàn vẹn:</strong> Bất kỳ sửa đổi nào đối với tài liệu đã ký đều làm mất hiệu lực chữ ký, được phát hiện ngay lập tức trong quá trình xác minh</li>' +
+      '<li><strong>Xác thực:</strong> Chữ ký xác nhận nguồn gốc tài liệu thông qua xác minh mật mã danh tính người ký</li>' +
+      '<li><strong>Tiêu chuẩn Công nghiệp:</strong> Tuân theo tiêu chuẩn PKCS#1 cho RSA và tiêu chuẩn SEC cho ECC, đảm bảo tương thích và bảo mật</li>' +
+      '</ul>' +
+      '<p>Dự án này thể hiện hiểu biết sâu sắc về mật mã khóa công khai, thực hành phát triển phần mềm an toàn và các thách thức thực tế trong việc triển khai hệ thống mật mã. Khả năng triển khai và so sánh nhiều thuật toán thể hiện kiến thức toàn diện về công nghệ chữ ký số hiện đại.</p>',
+    image: '/assets/project/sign/demo.png',
+    technologies: [
+      'React',
+      'TypeScript',
+      'JavaScript',
+      'Node.js',
+      'PostgreSQL',
+      'Docker',
+      'REST API',
+      'RSA',
+      'ECC',
+      'SHA-256/512',
+    ],
+    category: 'personal',
+    githubUrl: 'https://github.com/vinhbestever/KLTN-Digital-sign',
+    featured: false,
+  },
 ];
